@@ -1,0 +1,25 @@
+.focus::after{
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 1px;
+  background-color: white;
+  top: 150%;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.list-group-item {
+  color: white !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.progress {
+  height: 40px !important;
+  border-radius: 0 !important;
+}
+
+.progress-bar {
+  background-color: #ccc !important;
+}
