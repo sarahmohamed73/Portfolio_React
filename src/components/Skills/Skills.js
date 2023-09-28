@@ -1,9 +1,13 @@
-import './Skills.css'
+import './Skills.css';
+import { useState } from 'react';
+import { skills } from './SkillsData';
+import SkillsProgress from './SkillsProgress';
 
 function Skills() {
+  const [skillsList, setSkillsList] = useState(skills)
   return (
     <>
-      <div className='row row-cols-1 bg-dark text-light p-5 justify-content-center'>
+      <div className='row row-cols-1 text-light p-md-5 px-1 py-5 justify-content-center' style={{backgroundColor: "#363636"}}>
         <div  className='heading w-75 mb-5'>
           <h2 className='text-center mb-4 fs-1'>Skills</h2>
           <p className="lh-lg">
@@ -15,8 +19,8 @@ function Skills() {
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
-        <div className='row align-items-center w-75 mb-5'>
-          <div className='col skills'>
+        <div className='row align-items-center w-75'>
+          <div className='col-md-6 col-12 mb-5 skills'>
             <h4 className='focus position-relative mb-4'>My Focus</h4>
             <ul  className="list-group list-group-flush">
               <li  className="list-group-item">UI UX Design</li>
@@ -26,32 +30,12 @@ function Skills() {
               <li  className="list-group-item">Mobile App Design</li>
             </ul>
           </div>
-
-          <div className='col prog'>
-            <div className="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-              <div className="progress-bar fs-5 text-dark" style={{width: '95%'}}>HTML</div>
-            </div>
-            <div className="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-              <div className="progress-bar fs-5 text-dark"  style={{width: '95%'}}>CSS</div>
-            </div>
-            <div className="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-              <div className="progress-bar fs-5 text-dark"  style={{width: '80%'}}>JavaScript</div>
-            </div>
-            <div className="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-              <div className="progress-bar fs-5 text-dark"  style={{width: '80%'}}>React</div>
-            </div>
-            <div className="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-              <div className="progress-bar fs-5 text-dark"  style={{width: '90%'}}>Photoshop</div>
-            </div>
-            <div className="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-              <div className="progress-bar fs-5 text-dark"  style={{width: '85%'}}>Adobe XD</div>
-            </div>
-            <div className="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-              <div className="progress-bar fs-5 text-dark"  style={{width: '70%'}}>Node JS</div>
-            </div>
-            <div className="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-              <div className="progress-bar fs-5 text-dark"  style={{width: '50%'}}>WordPress</div>
-            </div>
+          <div className='col-md-6 col-12 prog'>
+            {skillsList.map((skill) => {
+              return (
+                <SkillsProgress skillData={skill}/>
+              )
+            })}
           </div>
         </div>
       </div>
