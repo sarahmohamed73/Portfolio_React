@@ -4,10 +4,10 @@ function Bio() {
   return (
     <>
       <div className="row align-items-center my-5">
-        <div className="col-3 g-2">
+        <div className="col-md-3 col-12 g-2">
           <h2 className="txt-shadow text-center fs-1">ABOUT ME</h2>
         </div>
-        <div className="col-9 text-start p-2">
+        <div className="col-md-9 col-12 text-start p-2">
           <p className="lh-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -16,7 +16,7 @@ function Bio() {
             esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <a href={resume}  className="btn btn-dark btn-lg" download="Resume">Download Resume</a>
+          <a href={resume}  className="btn btn-lg" download="Resume" style={{backgroundColor: "#363636",color: "white"}}>Download Resume</a>
         </div>
       </div>
     </>
